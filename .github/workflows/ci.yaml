@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dump push
-        if: github.event_type == 'push'
+        if: github.event_name == 'push'
         run: github.push
       - name: Dump pull_request
-        if: github.event_type == 'pull_request'
+        if: github.event_name == 'pull_request'
         run: github.pull_request
