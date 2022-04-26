@@ -13,9 +13,5 @@ jobs:
     name: Debug Event
     runs-on: ubuntu-latest
     steps:
-      - name: Dump push
-        if: github.event_name == 'push'
-        run: github.push
-      - name: Dump pull_request
-        if: github.event_name == 'pull_request'
-        run: github.pull_request
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
